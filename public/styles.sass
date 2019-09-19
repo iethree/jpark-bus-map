@@ -1,0 +1,151 @@
+//jpark bus map styles
+
+$grey: hsl(0,0%, 60%)
+$grey-dark: hsl(0,0%, 40%)
+$grey-darker: hsl(0,0%, 20%)
+$black: hsl(0,0%, 20%)
+$white: hsl(0,0%,90%)
+$blue: hsl(200, 100%, 27%)
+$blue-light: hsl(200, 50%, 47%)
+$blue-lighter: hsl(200, 50%, 67%)
+$red: hsl(346, 100%, 50%)
+
+$terminal-breadth: 200px
+$terminal-length: 900px
+$shadow: 6px 6px 6px $black
+$shadow-small: 2px 2px 2px $black
+
+body
+   font-family: Helvetica,Arial,sans-serif
+   width: 100vw
+   height: 100vh
+   background-image: linear-gradient(to top right, $grey, $grey-dark)
+   padding: 0
+   margin: 0
+   color: $grey-darker
+.title
+   position: fixed
+   top: 30px
+   color: $white
+   width: 100vw
+   font-size: 60px
+   font-weight: 800
+   letter-spacing: 10px
+   font-weight: bold
+   text-align: center
+   text-shadow: $shadow
+.terminal, .walkway
+   position: fixed
+   background-color: $white
+   border-radius: 10px
+   box-shadow: $shadow
+
+.walkway
+   width: $terminal-breadth
+   height: $terminal-length
+   left: 900px
+   bottom: 20px
+
+.here
+   position: fixed
+   bottom: 100px
+   left: 945px
+   font-size: 40px
+   text-shadow: $shadow-small
+   text-align: center
+
+
+.building
+   position: fixed
+   background-color: $white
+   width: 100vw
+   height: 50px
+   bottom: 0
+
+.north-terminal
+   width: $terminal-breadth
+   height: $terminal-length
+   right: 20px
+   bottom: 20px
+   display: flex
+   flex-direction: column
+   justify-content: flex-start
+   align-items: flex-end
+   z-index: -1
+   .route
+      display: flex
+      flex-direction: row-reverse
+      justify-content: flex-end
+      align-items: center
+      height: 140px
+   .route-label
+      width: 200px
+   .route-buses
+      display: flex
+      flex-direction: row-reverse
+   .bus
+      margin: 0 10px
+
+.south-terminal
+   width: $terminal-length
+   height: $terminal-breadth
+   left: 20px
+   top: 160px
+   display: flex
+   flex-direction: row
+   justify-content: flex-start
+   align-items: flex-start
+   z-index: -1
+   .route
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
+      width: 140px
+   .route-label
+      display: flex
+      height: 200px
+      align-items: center
+      color: $grey-darker
+   .bus
+      margin: 20px auto
+
+.route-label
+   font-size: 50px
+   font-weight: 600
+   text-align: center
+   text-shadow: $shadow-small
+.bus
+   display: flex
+   width: 70px
+   height: 70px
+   border-radius: 10px
+   background-color: $blue
+   font-size: 30px
+   padding: 15px
+   color: $white
+   text-align: center
+   align-items: center
+   justify-content: center
+   box-shadow: $shadow
+.route-buses
+   margin: 20px
+
+.progress
+   position: fixed
+   top: 50px
+   right: 90px
+   width: 50px
+   height: 50px
+.hidden
+   display: none
+
+.flash
+   background-color: $red
+   animation: colorChange 0.5s infinte alternate
+
+@keyframes colorChange 
+	0%
+      background-color: $blue
+	100%
+      background-color: $red

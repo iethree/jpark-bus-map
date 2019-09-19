@@ -1,0 +1,17 @@
+{
+  "name": "jpark-buses",
+  "version": "1.0.0",
+  "description": "a bus tracker view for the jefferson park transit center",
+  "main": "bus-map-server.js",
+  "scripts": {
+    "start": "node bus-map-server.js",
+    "test":  "node test.js"
+  },
+  "author": "RPL",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "request": "^2.88.0"
+  }
+}
